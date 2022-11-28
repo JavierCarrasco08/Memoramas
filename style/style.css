@@ -1,3 +1,18 @@
+html,
+body {
+  font-family: "Anek Devanagari", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
 
 /*# sourceMappingURL=style.css.map */

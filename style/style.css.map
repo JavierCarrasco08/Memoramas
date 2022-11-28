@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../style-sass/style.scss"],"names":[],"mappings":"AAAA;AAAA;EAEE;EACA;EACA;EACA;EACA;;;AAEF;AAAA;AAAA;EAGE;EACA;EACA","file":"style.css"}
