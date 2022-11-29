@@ -23,6 +23,9 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 90%;
   max-width: 1300px;
   margin-right: auto;
@@ -48,21 +51,21 @@ main {
   border-radius: 50px;
 }
 .count-card p {
+  margin-top: 5px;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #01161e;
   line-height: 0;
-}
-.count-card span {
-  font-weight: 300;
 }
 
 .memorama-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
   width: 100%;
-  background-color: rgba(244, 243, 238, 0.25);
+  min-height: 50vh;
+  background-color: rgba(250, 250, 250, 0.25);
+  place-content: center;
   border-radius: 10px;
   padding: 0.5rem;
   gap: 1rem;
@@ -70,7 +73,7 @@ main {
 
 .card {
   position: relative;
-  min-height: 25vh;
+  height: 25vh;
   border: 5px solid #f4f3ee;
   cursor: pointer;
   transition: transform 0.75s ease-in-out;
@@ -115,6 +118,53 @@ main {
   transform: translateX(-100%) rotateY(180deg);
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(213, 242, 227, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s linear;
+}
+.modal section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.modal article {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f3ee;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.modal article:hover {
+  transform: scale(0.8);
+}
+.modal h2 {
+  font-weight: 600;
+  color: rgb(50, 50, 50);
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
 .foo {
   width: 100%;
   height: 150px;
@@ -141,7 +191,8 @@ main {
 }
 
 .copy {
-  font-size: 2rem;
+  text-align: center;
+  font-size: clamp(0.5rem, 5vw, 1.5rem);
   font-weight: 600;
   color: #f4f3ee;
 }

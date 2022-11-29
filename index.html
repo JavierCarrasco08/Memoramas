@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memoramas</title>
+    <link rel="shortcut icon" href="assets/svg/crown.svg" type="image/x-icon" />
     <!-- Font google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,9 +14,12 @@
       rel="stylesheet" />
     <!-- Styles -->
     <link rel="stylesheet" href="style/style.css" />
+    <!-- Script -->
+    <script src="JavaScript/index.js" type="module" defer></script>
   </head>
   <body>
     <main>
+      <!-- Header -->
       <header class="hero">
         <figure class="logitpo">
           <img src="assets/svg/crown.svg" alt="" class="logo" />
@@ -24,20 +28,31 @@
           <p class="count">0 <span>Card</span></p>
         </div>
       </header>
-      <section class="memorama-content">
-        <section class="card">
-          <article class="back-card">
-            <figure class="back-figure">
-              <img src="assets/svg/crown.svg" alt="Corona" />
+      <!-- Container memorama -->
+      <section class="memorama-content"></section>
+      <!-- Modal difficulty -->
+      <aside class="modal">
+        <section class="dificultades">
+          <article class="easy" data-mode="1">
+            <figure>
+              <img src="assets/svg/easy.svg" alt="Easy" />
             </figure>
+            <h2>Easy</h2>
           </article>
-          <article class="front-card">
-            <figure class="fron-figure">
-              <img src="assets/images/seta.png" alt="Hongo" />
+          <article class="standard" data-mode="3">
+            <figure>
+              <img src="assets/svg/standard.svg" alt="Standard" />
             </figure>
+            <h2>Standard</h2>
+          </article>
+          <article class="hard" data-mode="5">
+            <figure>
+              <img src="assets/svg/hard.svg" alt="hard" />
+            </figure>
+            <h2>Hard</h2>
           </article>
         </section>
-      </section>
+      </aside>
     </main>
     <footer class="foo">
       <nav class="redes-sociales">
