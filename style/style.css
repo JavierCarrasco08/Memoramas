@@ -204,4 +204,17 @@ main {
   color: #f4f3ee;
 }
 
+@media screen and (max-width: 450px) {
+  .memorama-content {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  }
+  .card {
+    height: 15vh;
+  }
+  .card figure {
+    min-height: 70px;
+    min-width: 70px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
