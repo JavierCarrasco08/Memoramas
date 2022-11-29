@@ -72,6 +72,7 @@ main {
 }
 
 .card {
+  order: 0;
   position: relative;
   height: 25vh;
   border: 5px solid #f4f3ee;
