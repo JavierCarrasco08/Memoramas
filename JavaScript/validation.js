@@ -1,4 +1,7 @@
 export function validationMemorama(arr) {
+  const $containerMemorama = document.querySelector(".memorama-content"),
+    $count = document.querySelector(".count"),
+    $modal = document.querySelector(".modal");
   let [arr1, arr2] = arr;
   let alt1 = arr1.lastElementChild.firstElementChild.firstElementChild;
   let alt2 = arr2.lastElementChild.firstElementChild.firstElementChild;
@@ -8,6 +11,18 @@ export function validationMemorama(arr) {
         el.classList.remove("rotate");
       });
     }, 1000);
+  } else {
+    setTimeout(() => {
+      arr.forEach((el) => el.classList.add("order"));
+    }, 1000);
+    setTimeout(() => {
+      arr.forEach((el) => $containerMemorama.removeChild(el));
+      $count.innerHTML = `${$containerMemorama.children.length} <span>Cards</span>`;
+      if ($containerMemorama.children.length === 0) {
+        $modal.classList.remove("opacity");
+        $modal.classList.remove("visibility");
+      }
+    }, 1500);
   }
   arr.forEach((el) => el.removeAttribute("data-open"));
 }
