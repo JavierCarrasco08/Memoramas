@@ -5,7 +5,13 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #01161e;
 }
 
 *,
@@ -18,27 +24,126 @@ body {
 
 main {
   width: 90%;
+  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
+  flex-grow: 2;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.count-card {
+  background-color: #f4f3ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  height: 50px;
+  border-radius: 50px;
+}
+.count-card p {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #01161e;
+  line-height: 0;
+}
+.count-card span {
+  font-weight: 300;
 }
 
 .memorama-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
   width: 100%;
-}
-.memorama-content .front-card {
-  background-color: green;
-  height: 100%;
-}
-.memorama-content .back-card {
-  background-color: blue;
-  height: 100%;
+  background-color: rgba(244, 243, 238, 0.25);
+  border-radius: 10px;
+  padding: 0.5rem;
+  gap: 1rem;
 }
 
 .card {
-  min-height: 40vh;
-  background-color: red;
+  position: relative;
+  min-height: 25vh;
+  border: 5px solid #f4f3ee;
+  cursor: pointer;
+  transition: transform 0.75s ease-in-out;
+  perspective: 10rem;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+}
+.card img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.card article {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.card .front-card {
+  background-color: #e0aaff;
+  display: grid;
+  place-content: center;
+  transform: rotateY(180deg);
+}
+.card .back-card {
+  background-image: url("../assets/images/Patern.png");
+  background-size: cover;
+  display: grid;
+  place-content: center;
+  transform: rotateY(0deg);
+}
+.card figure {
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 50%;
+  background-color: #f4f3ee;
+  display: grid;
+  place-content: center;
+}
+
+.rotate {
+  transform: translateX(-100%) rotateY(180deg);
+}
+
+.foo {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 0;
+}
+.foo a {
+  color: transparent;
+  transition: transform 0.5s ease-in-out;
+}
+.foo a svg {
+  fill: #f4f3ee;
+}
+.foo a:hover {
+  transform: translateY(-10px);
+}
+
+.redes-sociales {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.copy {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f4f3ee;
 }
 
 /*# sourceMappingURL=style.css.map */
