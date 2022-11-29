@@ -1,4 +1,5 @@
 import { cardMemorara } from "./Card.js";
+import { validationMemorama } from "./validation.js";
 
 const D = document,
   $containerMemorama = D.querySelector(".memorama-content"),
@@ -21,15 +22,30 @@ D.addEventListener("click", (e) => {
   if (e.target.matches(".card *")) {
     let card = e.target.parentElement;
     if (card.getAttribute("class") === "card") {
+      card.dataset.open = "true";
       card.classList.add("rotate");
     }
     if (card.getAttribute("class") === "back-card") {
       let card = e.target.parentElement.parentElement;
+      card.dataset.open = "true";
       card.classList.add("rotate");
     }
     if (card.getAttribute("class") === "back-figure") {
       let card = e.target.parentElement.parentElement.parentElement;
+      card.dataset.open = "true";
       card.classList.add("rotate");
+    }
+    // const $front = card.querySelector(".front-card");
+    const $children = Array.from($containerMemorama.children);
+    let open = $children.filter((e) => {
+      if (e.dataset.open) {
+        return e;
+      }
+    });
+    console.log(open);
+    if (open.length === 2) {
+      validationMemorama(open);
+      open = [];
     }
   }
 });
