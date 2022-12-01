@@ -34,7 +34,6 @@ D.addEventListener("click", (e) => {
       card.classList.add("rotate");
     }
     if (card.getAttribute("class") === "back-figure") {
-      console.log("SI");
       let card = e.target.parentElement.parentElement.parentElement;
       card.dataset.open = "true";
       card.classList.add("rotate");

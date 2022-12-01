@@ -3,16 +3,20 @@ export function cardMemorara(mode) {
     W = window,
     $fragment = D.createDocumentFragment();
   let array;
-  if (mode === "1") {
+  if (mode === "2") {
     array = [
       {
         src: "assets/images/seta.png",
         alt: "Hongo",
       },
+      {
+        src: "assets/images/pokebola.png",
+        alt: "Pokebola",
+      },
     ];
   }
 
-  if (mode === "3") {
+  if (mode === "4") {
     array = [
       {
         src: "assets/images/seta.png",
@@ -26,9 +30,13 @@ export function cardMemorara(mode) {
         src: "assets/images/naruto.png",
         alt: "Naruto",
       },
+      {
+        src: "assets/images/perro.png",
+        alt: "Perro",
+      },
     ];
   }
-  if (mode === "5") {
+  if (mode === "8") {
     array = [
       {
         src: "assets/images/seta.png",
@@ -49,6 +57,18 @@ export function cardMemorara(mode) {
       {
         src: "assets/images/estacion-de-juegos.png",
         alt: "Play",
+      },
+      {
+        src: "assets/images/perro.png",
+        alt: "Perro",
+      },
+      {
+        src: "assets/images/gato-burmilla.png",
+        alt: "Gato",
+      },
+      {
+        src: "assets/images/sombrero-de-copa.png",
+        alt: "Sombrero",
       },
     ];
   }

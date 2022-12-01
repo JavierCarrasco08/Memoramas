@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  gap: 2rem;
 }
 
 body {
@@ -26,7 +27,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 90%;
+  width: 95%;
   max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
@@ -147,7 +148,7 @@ main {
 }
 .modal article {
   width: 200px;
-  height: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,20 +175,20 @@ main {
 
 .foo {
   width: 100%;
-  height: 150px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 0;
 }
-.foo a {
+.foo .enlaces {
   color: transparent;
   transition: transform 0.5s ease-in-out;
 }
-.foo a svg {
+.foo .enlaces svg {
   fill: #f4f3ee;
 }
-.foo a:hover {
+.foo .enlaces:hover {
   transform: translateY(-10px);
 }
 
@@ -204,12 +205,67 @@ main {
   color: #f4f3ee;
 }
 
-@media screen and (max-width: 450px) {
+.atribuciones {
+  width: 100%;
+  color: #f4f3ee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.atribuciones h2 {
+  text-align: center;
+}
+.atribuciones nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.atribuciones a {
+  display: inline-block;
+  color: #ffa69e;
+}
+
+@media screen and (max-width: 455px) {
+  .memorama-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+  }
+  .card {
+    height: 25vh;
+  }
+  .card figure {
+    min-height: 70px;
+    min-width: 70px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .atribuciones nav {
+    grid-template-columns: 300px;
+    place-content: center;
+    background-color: red;
+    gap: 0.25rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .atribuciones nav {
+    grid-template-columns: 250px;
+    place-content: center;
+    background-color: red;
+    gap: 0.25rem;
+  }
+}
+@media screen and (max-width: 350px) {
   .memorama-content {
     grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
   }
   .card {
-    height: 15vh;
+    height: 25vh;
   }
   .card figure {
     min-height: 70px;
