@@ -1,7 +1,8 @@
 export function validationMemorama(arr) {
   const $containerMemorama = document.querySelector(".memorama-content"),
     $count = document.querySelector(".count"),
-    $modal = document.querySelector(".modal");
+    $modal = document.querySelector(".modal"),
+    $sound = document.getElementById("sound");
   let [arr1, arr2] = arr;
   let alt1 = arr1.lastElementChild.firstElementChild.firstElementChild;
   let alt2 = arr2.lastElementChild.firstElementChild.firstElementChild;
@@ -19,6 +20,8 @@ export function validationMemorama(arr) {
       arr.forEach((el) => $containerMemorama.removeChild(el));
       $count.innerHTML = `${$containerMemorama.children.length} <span>Cards</span>`;
       if ($containerMemorama.children.length === 0) {
+        $sound.src = "assets/audios/Winsound.wav";
+        $sound.play();
         $modal.classList.remove("opacity");
         $modal.classList.remove("visibility");
       }

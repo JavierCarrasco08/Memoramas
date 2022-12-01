@@ -5,7 +5,8 @@ const D = document,
   $containerMemorama = D.querySelector(".memorama-content"),
   $modal = D.querySelector(".modal"),
   $card = D.querySelector(".card"),
-  $count = D.querySelector(".count");
+  $count = D.querySelector(".count"),
+  $sound = D.getElementById("sound");
 D.addEventListener("click", (e) => {
   if (
     e.target.matches(".modal article") ||
@@ -22,6 +23,8 @@ D.addEventListener("click", (e) => {
     return false;
   }
   if (e.target.matches(".card *")) {
+    $sound.src = "assets/audios/Cardmv.wav";
+    $sound.play();
     let card = e.target.parentElement;
     if (card.getAttribute("class") === "card") {
       card.dataset.open = "true";
