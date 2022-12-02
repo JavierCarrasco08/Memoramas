@@ -18,6 +18,7 @@ D.addEventListener("click", (e) => {
     $containerMemorama.appendChild(cardMemorara(mode));
     Reloj(mode);
     $modal.classList.add("opacity");
+    $modal.classList.remove("end", "win");
     setTimeout(() => {
       $modal.classList.add("visibility");
     }, 500);

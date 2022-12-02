@@ -1,3 +1,5 @@
+import { Reloj } from "./Reloj.js";
+
 export function validationMemorama(arr) {
   const $containerMemorama = document.querySelector(".memorama-content"),
     $count = document.querySelector(".count"),
@@ -22,6 +24,7 @@ export function validationMemorama(arr) {
       if ($containerMemorama.children.length === 0) {
         $sound.src = "assets/audios/Winsound.wav";
         $sound.play();
+        $modal.classList.add("win");
         $modal.classList.remove("opacity");
         $modal.classList.remove("visibility");
       }

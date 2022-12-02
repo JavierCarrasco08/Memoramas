@@ -13,22 +13,31 @@ export function Reloj(mode) {
     seconds = 120;
   }
   if (mode > 4) {
-    seconds = 10;
+    seconds = 60;
   }
-  setInterval(() => {
+  let inter = setInterval(() => {
     seconds--;
     date.setMinutes(0);
     date.setSeconds(seconds);
     $reloj.innerHTML = date.toLocaleTimeString().slice(2);
-    if ($reloj.innerHTML === "00:00") {
+    if ($containerMemorama.children.length === 0) {
+      $reloj.innerHTML = "00:00";
+      clearInterval(inter);
+    }
+    if (
+      $reloj.innerHTML === "00:00" &&
+      $containerMemorama.children.length !== 0
+    ) {
       let childs = Array.from($containerMemorama.children);
       childs.forEach((e) => $containerMemorama.removeChild(e));
       $sound.src = "assets/audios/LoseGamer.flac";
       $sound.play();
+      $modal.classList.add("end");
       $modal.classList.remove("opacity");
       $modal.classList.remove("visibility");
       $reloj.innerHTML = "00:00";
-      return;
+      clearInterval(inter);
+      return false;
     }
   }, 1000);
 }
