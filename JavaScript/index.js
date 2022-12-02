@@ -1,4 +1,5 @@
 import { cardMemorara } from "./Card.js";
+import { Reloj } from "./Reloj.js";
 import { validationMemorama } from "./validation.js";
 
 const D = document,
@@ -15,6 +16,7 @@ D.addEventListener("click", (e) => {
     let mode = e.target.dataset.mode;
     $containerMemorama.appendChild(cardMemorara(mode));
     $containerMemorama.appendChild(cardMemorara(mode));
+    Reloj(mode);
     $modal.classList.add("opacity");
     setTimeout(() => {
       $modal.classList.add("visibility");
@@ -23,21 +25,22 @@ D.addEventListener("click", (e) => {
     return false;
   }
   if (e.target.matches(".card *")) {
-    $sound.src = "assets/audios/Cardmv.wav";
-    $sound.play();
     let card = e.target.parentElement;
+    $sound.src = "assets/audios/Cardmv.wav";
     if (card.getAttribute("class") === "card") {
+      $sound.play();
       card.dataset.open = "true";
       card.classList.add("rotate");
     }
     if (card.getAttribute("class") === "back-card") {
-      console.log("SI");
       let card = e.target.parentElement.parentElement;
+      $sound.play();
       card.dataset.open = "true";
       card.classList.add("rotate");
     }
     if (card.getAttribute("class") === "back-figure") {
       let card = e.target.parentElement.parentElement.parentElement;
+      $sound.play();
       card.dataset.open = "true";
       card.classList.add("rotate");
     }
