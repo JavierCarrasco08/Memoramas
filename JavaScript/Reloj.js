@@ -25,8 +25,9 @@ export function Reloj(mode) {
       clearInterval(inter);
     }
     if (
-      $reloj.innerHTML === "00:00" &&
-      $containerMemorama.children.length !== 0
+      ($reloj.innerHTML === "00:00" &&
+        $containerMemorama.children.length !== 0) ||
+      $reloj.innerHTML === ":00:00"
     ) {
       let childs = Array.from($containerMemorama.children);
       childs.forEach((e) => $containerMemorama.removeChild(e));
