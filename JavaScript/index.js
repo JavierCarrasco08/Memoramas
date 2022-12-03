@@ -10,10 +10,11 @@ const D = document,
   $sound = D.getElementById("sound");
 D.addEventListener("click", (e) => {
   if (
-    e.target.matches(".modal article") ||
-    e.target.matches(".modal article *")
+    e.target.matches(".modal article *") ||
+    e.target.matches(".modal article")
   ) {
-    let mode = e.target.dataset.mode;
+    let mode =
+      e.target.closest("article").dataset.mode || e.target.dataset.mode;
     $containerMemorama.appendChild(cardMemorara(mode));
     $containerMemorama.appendChild(cardMemorara(mode));
     Reloj(mode);
@@ -26,26 +27,10 @@ D.addEventListener("click", (e) => {
     return false;
   }
   if (e.target.matches(".card *")) {
-    let card = e.target.parentElement;
     $sound.src = "assets/audios/Cardmv.wav";
-    if (card.getAttribute("class") === "card") {
-      $sound.play();
-      card.dataset.open = "true";
-      card.classList.add("rotate");
-    }
-    if (card.getAttribute("class") === "back-card") {
-      let card = e.target.parentElement.parentElement;
-      $sound.play();
-      card.dataset.open = "true";
-      card.classList.add("rotate");
-    }
-    if (card.getAttribute("class") === "back-figure") {
-      let card = e.target.parentElement.parentElement.parentElement;
-      $sound.play();
-      card.dataset.open = "true";
-      card.classList.add("rotate");
-    }
-    // const $front = card.querySelector(".front-card");
+    $sound.play();
+    e.target.closest(".card").dataset.open = "true";
+    e.target.closest(".card").classList.add("rotate");
     const $children = Array.from($containerMemorama.children);
     let open = $children.filter((e) => {
       if (e.dataset.open) {

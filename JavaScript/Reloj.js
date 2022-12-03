@@ -19,13 +19,13 @@ export function Reloj(mode) {
     seconds--;
     date.setMinutes(0);
     date.setSeconds(seconds);
-    $reloj.innerHTML = date.toLocaleTimeString().slice(2);
+    $reloj.innerHTML = date.toLocaleTimeString().slice(3);
     if ($containerMemorama.children.length === 0) {
       $reloj.innerHTML = "00:00";
       clearInterval(inter);
     }
     if (
-      ($reloj.innerHTML === "00:00" || $reloj.innerHTML === ":00:00") &&
+      ($reloj.innerHTML === "0:00" || $reloj.innerHTML === "00:00") &&
       $containerMemorama.children.length !== 0
     ) {
       let childs = Array.from($containerMemorama.children);
